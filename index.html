@@ -51,11 +51,11 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">Business ($150)</label>
-                    <input id="business-input" class="inp-style inp-width" value="0" type="number">
+                    <input id="business-input" class="inp-style inp-width" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span id="business-increase"> +</span>
-                        <span id="business-decrease"> -</span>
+                    <p> <span onclick="businessClass(true)"> +</span>
+                        <span onclick="businessClass(false)"> -</span>
                     </p>
                 </div>
             </div>
@@ -63,12 +63,12 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input id="economy-input" class="inp-style inp-width" type="number" value="0">
+                    <input id="economy-input" class="inp-style inp-width" value="0">
                 </div>
                 <div class="plus-minus-btn">
                     <p>
-                        <span id="economy-increase">+</span>
-                        <span id="economy-decrease">-</span>
+                        <span onclick="economyClass(true)">+</span>
+                        <span onclick="economyClass(false)">-</span>
                     </p>
                 </div>
             </div>
@@ -113,53 +113,116 @@
     <!-- js script -->
     <!-- <script src="script.js"></script> -->
     <script>
-        // business-increase
-            document.getElementById('business-increase').addEventListener('click', function(){
-            // console.log('click');
-            const classInput = document.getElementById('business-input');
-            const inputCount = parseInt(classInput.value);
-            // console.log(inputCount);
-            const inputNewCount = inputCount + 1;
-            classInput.value = inputNewCount;
-            const firstClassTotal = inputNewCount * 150;
-            document.getElementById('subtotal').innerText = '$' + firstClassTotal;
-        })
-            // business-decrease
-            document.getElementById('business-decrease').addEventListener('click', function(){
-            // console.log('click');
-            const classInput = document.getElementById('business-input');
-            const inputCount = parseInt(classInput.value);
-            // console.log(inputCount);
-            const inputNewCount = inputCount - 1;
-            classInput.value = inputNewCount;
-            const firstClassTotal = inputNewCount * 150;
-            document.getElementById('subtotal').innerText = '$' + firstClassTotal;
-        })
+        
+    function businessClass(isIncrease){
+        const classInput = document.getElementById('business-input');
+        const inputCount = parseInt(classInput.value);
+        
+        // const inputNewCount = inputCount - 1;
+        let inputNewCount = inputCount;
+        if(isIncrease == true){
+            inputNewCount = inputCount + 1;
+        }if(isIncrease == false && inputCount > 0){
+            inputNewCount = inputCount - 1;
+        }
+        classInput.value = inputNewCount;
+        const firstClassTotal = inputNewCount * 150;
+        document.getElementById('subtotal').innerText = '$' + firstClassTotal;
+    }
 
-
-            // economy-increase
-            document.getElementById('economy-increase').addEventListener('click', function(){
-            // console.log('click');
+    function economyClass(isIncrease){
             const classInput = document.getElementById('economy-input');
             const inputCount = parseInt(classInput.value);
             // console.log(inputCount);
-            const inputNewCount = inputCount + 1;
+            // const inputNewCount = inputCount + 1;
+            let inputNewCount = inputCount;
+            if(isIncrease == true){
+                inputNewCount = inputCount + 1;
+            }
+            if(isIncrease == false && inputCount > 0){
+                inputNewCount = inputCount - 1;
+            }
             classInput.value = inputNewCount;
             const firstClassTotal = inputNewCount * 100;
             document.getElementById('subtotal').innerText = '$' + firstClassTotal;
-            })
+            }
+        //     // business-increase
+        //     document.getElementById('business-increase').addEventListener('click', function(){
+            
+        //         businessClass(true);
+        // })
+        //     // business-decrease
+        //     document.getElementById('business-decrease').addEventListener('click', function(){
+        //         businessClass(false);
+            
+        // })
 
-            // economy-decrease
-            document.getElementById('economy-decrease').addEventListener('click', function(){
-            // console.log('click');
-            const classInput = document.getElementById('economy-input');
-            const inputCount = parseInt(classInput.value);
-            // console.log(inputCount);
-            const inputNewCount = inputCount - 1;
-            classInput.value = inputNewCount;
-            const firstClassTotal = inputNewCount * 100;
-            document.getElementById('subtotal').innerText = '$' + firstClassTotal;
-            })
+        // function businessClass(isIncrease){
+        //     const classInput = document.getElementById('business-input');
+        //     const inputCount = parseInt(classInput.value);
+            
+        //     // const inputNewCount = inputCount - 1;
+        //     let inputNewCount = inputCount;
+        //     if(isIncrease == true){
+        //         inputNewCount = inputCount + 1;
+        //     }if(isIncrease == false && inputCount > 0){
+        //         inputNewCount = inputCount - 1;
+        //     }
+        //     classInput.value = inputNewCount;
+        //     const firstClassTotal = inputNewCount * 150;
+        //     document.getElementById('subtotal').innerText = '$' + firstClassTotal;
+        // }
+
+        // // business-increase
+        //     document.getElementById('business-increase').addEventListener('click', function(){
+            
+        //     const classInput = document.getElementById('business-input');
+        //     const inputCount = parseInt(classInput.value);
+          
+        //     const inputNewCount = inputCount + 1;
+        //     classInput.value = inputNewCount;
+        //     const firstClassTotal = inputNewCount * 150;
+        //     document.getElementById('subtotal').innerText = '$' + firstClassTotal;
+        // })
+        //     // business-decrease
+        //     document.getElementById('business-decrease').addEventListener('click', function(){
+          
+        //     const classInput = document.getElementById('business-input');
+        //     const inputCount = parseInt(classInput.value);
+            
+        //     const inputNewCount = inputCount - 1;
+        //     classInput.value = inputNewCount;
+        //     const firstClassTotal = inputNewCount * 150;
+        //     document.getElementById('subtotal').innerText = '$' + firstClassTotal;
+        // })
+
+
+            // // economy-increase
+            // document.getElementById('economy-increase').addEventListener('click', function(){
+            // // console.log('click');
+            // const classInput = document.getElementById('economy-input');
+            // const inputCount = parseInt(classInput.value);
+            // // console.log(inputCount);
+            // const inputNewCount = inputCount + 1;
+            // classInput.value = inputNewCount;
+            // const firstClassTotal = inputNewCount * 100;
+            // document.getElementById('subtotal').innerText = '$' + firstClassTotal;
+            // })
+
+            // // economy-decrease
+            // document.getElementById('economy-decrease').addEventListener('click', function(){
+            // // console.log('click');
+            // const classInput = document.getElementById('economy-input');
+            // const inputCount = parseInt(classInput.value);
+            // // console.log(inputCount);
+            // const inputNewCount = inputCount - 1;
+            // classInput.value = inputNewCount;
+            // const firstClassTotal = inputNewCount * 100;
+            // document.getElementById('subtotal').innerText = '$' + firstClassTotal;
+            // })
+
+            
+
 
     </script>
 </body>
