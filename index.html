@@ -50,12 +50,12 @@
             </div>
             <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($150)</label>
-                    <input id="class-input" class="inp-style inp-width" value="0" type="number">
+                    <label for="">Business ($150)</label>
+                    <input id="business-input" class="inp-style inp-width" value="0" type="number">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span id="class-increase"> +</span>
-                        <span id="class-decrease"> -</span>
+                    <p> <span id="business-increase"> +</span>
+                        <span id="business-decrease"> -</span>
                     </p>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p id="subtotal">$000</p>
+                        <p id="subtotal">$0</p>
                     </div>
                 </div>
 
@@ -110,15 +110,26 @@
     <!-- js script -->
     <!-- <script src="script.js"></script> -->
     <script>
-        const classBtn = document.getElementById('class-increase').addEventListener('click', function(){
+        document.getElementById('business-increase').addEventListener('click', function(){
             // console.log('click');
-            const classInput = document.getElementById('class-input');
-            const inputCount = parseInt(classInput.value);
-            // console.log(inputCount);
-            const inputNewCount = inputCount + 1;
-            classInput.value = inputNewCount;
-            const firstClassTotal = inputNewCount * 150;
-            document.getElementById('subtotal').innerText = '$' + firstClassTotal;
+            const increaseInput = document.getElementById('business-input');
+            const increaseCount = parseInt(increaseInput.value);
+            // console.log(increaseCount);
+            const increaseNewCount = increaseCount + 1;
+            increaseInput.value = increaseNewCount;
+            const increaseTotal = increaseNewCount * 150;
+            document.getElementById('subtotal').innerText = '$' + increaseTotal;
+        })
+
+        document.getElementById('business-decrease').addEventListener('click', function(){
+            // console.log('click');
+            const increaseInput = document.getElementById('business-input');
+            const increaseCount = parseInt(increaseInput.value);
+            // console.log(increaseCount);
+            const increaseNewCount = increaseCount - 1;
+            increaseInput.value = increaseNewCount;
+            const increaseTotal = increaseNewCount * 150;
+            document.getElementById('subtotal').innerText = '$' + increaseTotal;
         })
     </script>
 </body>
