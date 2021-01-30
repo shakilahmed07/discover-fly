@@ -47,5 +47,5 @@ function getInputValue(ticket) {
 // function confirmation alert
 
 document.getElementById("confirm-alert").addEventListener("click", function () {
-  alert("Thank You For Confrim Booking Ticket");
+  alert("Thank You For Confirm Booking Ticket");
 });
