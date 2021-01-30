@@ -47,6 +47,5 @@ function getInputValue(ticket) {
 // function confirmation alert
 
 document.getElementById("confirm-alert").addEventListener("click", function () {
-  //   console.log("click porse");
-  alert("Confirmation");
+  alert("Thank You For Confrim Booking Ticket");
 });
